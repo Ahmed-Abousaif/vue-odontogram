@@ -1,0 +1,70 @@
+{
+	"name": "vue-odontogram",
+	"description": "Interactive dental chart component for Vue 3",
+	"version": "0.1.0",
+	"author": "Pratik Sharma <sharma.pratik2016@gmail.com>",
+	"license": "MIT",
+	"type": "module",
+	"keywords": [
+		"odontogram",
+		"typodont",
+		"vue",
+		"vue3",
+		"dental-chart",
+		"dental",
+		"tooth",
+		"teeth",
+		"dental-selector",
+		"teeth-selector",
+		"dentistry",
+		"medical",
+		"vue-teeth-selector",
+		"dental-notation"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": [
+		"*.css",
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/vue-odontogram.es.js",
+			"require": "./dist/vue-odontogram.cjs.js"
+		},
+		"./style.css": "./dist/style.css"
+	},
+	"main": "./dist/vue-odontogram.cjs.js",
+	"module": "./dist/vue-odontogram.es.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "vue-tsc --noEmit && vite build",
+		"test": "vitest",
+		"test:ci": "vitest run",
+		"lint": "biome check --write --unsafe .",
+		"lint:ci": "biome check --unsafe ."
+	},
+	"peerDependencies": {
+		"vue": "^3.5.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@vitejs/plugin-vue": "^5.2.1",
+		"@vue/test-utils": "^2.4.6",
+		"jsdom": "26.0.0",
+		"typescript": "5.8.2",
+		"vite": "^6.2.0",
+		"vite-plugin-dts": "^4.5.0",
+		"vitest": "3.0.9",
+		"vue": "^3.5.13",
+		"vue-tsc": "^2.2.8"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	}
+}
