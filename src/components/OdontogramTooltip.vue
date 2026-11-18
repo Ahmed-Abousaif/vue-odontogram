@@ -88,8 +88,8 @@ watch(
 			lineHeight: 1.3,
 			whiteSpace: 'nowrap',
 			zIndex: 1000,
-			left: coords?.left ?? -9999,
-			top: coords?.top ?? -9999,
+			left: `${coords?.left ?? -9999}px`,
+			top: `${coords?.top ?? -9999}px`,
 			opacity: coords ? 1 : 0,
 			transition: 'opacity 0.15s ease',
 		}"
