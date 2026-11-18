@@ -1,7 +1,7 @@
 {
 	"name": "vue-odontogram",
 	"description": "Interactive dental chart component for Vue 3",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Pratik Sharma <sharma.pratik2016@gmail.com>",
 	"license": "MIT",
 	"type": "module",
