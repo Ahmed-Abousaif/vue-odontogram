@@ -30,6 +30,27 @@ describe("Odontogram", () => {
 		expect(lower.findAll('[role="option"]')).toHaveLength(16);
 	});
 
+	it("uses the lower quadrant ids when only the lower half is shown", () => {
+		const wrapper = mount(Odontogram, { props: { showHalf: "lower" } });
+
+		expect(wrapper.find('[class~="teeth-41"]').exists()).toBe(true);
+		expect(wrapper.find('[class~="teeth-31"]').exists()).toBe(true);
+		expect(wrapper.find('[class~="teeth-11"]').exists()).toBe(false);
+		expect(wrapper.find('[class~="teeth-21"]').exists()).toBe(false);
+	});
+
+	it("draws FDI quadrants 4 and 3 on the left and right of the lower row", () => {
+		const wrapper = mount(Odontogram);
+		const transform = (id: string) =>
+			wrapper
+				.get(`[class~="${id}"]`)
+				.element.parentElement?.getAttribute("transform");
+
+		// Quadrant 4 (lower right of the patient) is on the left, like quadrant 1.
+		expect(transform("teeth-41")).toContain("scale(1, -1)");
+		expect(transform("teeth-31")).toContain("scale(-1, -1)");
+	});
+
 	it("respects maxTeeth for each quadrant", () => {
 		const wrapper = mount(Odontogram, {
 			props: { maxTeeth: 5 },

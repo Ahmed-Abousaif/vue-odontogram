@@ -237,7 +237,11 @@ const conditionMap = computed(() => {
 });
 
 function teethPrefix(index: number) {
-	return `teeth-${index + 1}`;
+	// With the lower half only, the first visible quadrant is the third one.
+	const offset = props.showHalf === "lower" ? 2 : 0;
+	// FDI: the patient's lower right is quadrant 4, drawn on the left of the
+	// lower row, and the lower left is quadrant 3.
+	return `teeth-${[1, 2, 4, 3][index + offset]}`;
 }
 
 function toothId(prefix: string, toothName: string) {
